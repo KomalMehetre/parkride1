@@ -105,7 +105,7 @@ public String Userinsert(@RequestParam String nm,@RequestParam String emailid,@R
 
 //creating connection with the database 
 			  Connection  con=DriverManager.getConnection
-					  ("jdbc:mysql://10.128.133.159:3306/parkbook","komal","mehetre");
+					  ("jdbc:mysql://172.30.110.6:3306/parkbook","komal","mehetre");
 
 			PreparedStatement ps=con.prepareStatement
 			          ("insert into register values(?,?,?,?)");
@@ -144,7 +144,7 @@ public String bookinsert(@RequestParam String aname,@RequestParam String cname,@
 
 //creating connection with the database 
 			  Connection  con=DriverManager.getConnection
-					  ("jdbc:mysql://10.128.133.159:3306/parkbook","komal","mehetre");
+					  ("jdbc:mysql://172.30.110.6:3306/parkbook","komal","mehetre");
 
 			PreparedStatement ps=con.prepareStatement
 			          ("insert into booking(area,city,bookingtime,vehicleno) values(?,?,?,?)");
@@ -191,7 +191,7 @@ public String cancelbooking(@RequestParam String nm,@RequestParam String vehicle
 
 //creating connection with the database 
 			  Connection  con=DriverManager.getConnection
-					  ("jdbc:mysql://10.128.133.159:3306/parkbook","komal","mehetre");
+					  ("jdbc:mysql://172.30.110.6:3306/parkbook","komal","mehetre");
 			PreparedStatement ps=con.prepareStatement
 			          ("delete from booking where vehicleno=? ");
 			 ps.setString(1,vehicleno);
@@ -232,7 +232,7 @@ public String forgatepass(@RequestParam String usernm,@RequestParam String pass)
 
 //creating connection with the database 
 			  Connection  con=DriverManager.getConnection
-					  ("jdbc:mysql://10.128.133.159:3306/parkbook","komal","mehetre");
+					  ("jdbc:mysql://172.30.110.6:3306/parkbook","komal","mehetre");
 
 			  
 			  String sql="update register set passwd="+pass+" where name="+usernm;
@@ -288,7 +288,7 @@ public String loginpage(@RequestParam String uname,@RequestParam String pwd) thr
 
 				//creating connection with the database 
 							  Connection  con1=DriverManager.getConnection
-							             ("jdbc:mysql://10.128.133.159:3306/parkbook","komal","mehetre");
+							             ("jdbc:mysql://172.30.110.6:3306/parkbook","komal","mehetre");
 			 
 			 
 			 
@@ -351,7 +351,7 @@ public String SearchBB(@RequestParam String vno,ModelMap model)
 		Class.forName("com.mysql.jdbc.Driver");
 		ArrayList<String> al=new ArrayList<String>();
 		 Connection  con1=DriverManager.getConnection
-				 ("jdbc:mysql://10.128.133.159:3306/parkbook","komal","mehetre");
+				 ("jdbc:mysql://172.30.110.6:3306/parkbook","komal","mehetre");
 	PreparedStatement pstmt=con1.prepareStatement("select * from booking where vehicleno="+vno);
 	
 	ResultSet rs=pstmt.executeQuery();

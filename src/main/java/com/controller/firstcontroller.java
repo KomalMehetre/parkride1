@@ -104,8 +104,7 @@ public String Userinsert(@RequestParam String nm,@RequestParam String emailid,@R
 			Class.forName("com.mysql.jdbc.Driver");
 
 //creating connection with the database 
-			  Connection  con=DriverManager.getConnection
-					  ("jdbc:mysql://172.30.110.6:3306/parkbook","komal","mehetre");
+			  Connection  con=DriverManager.getConnection("jdbc:mysql://172.30.110.6:3306/parkbook","komal","mehetre");
 
 			PreparedStatement ps=con.prepareStatement
 			          ("insert into register values(?,?,?,?)");
